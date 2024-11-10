@@ -1,8 +1,9 @@
 import MainLayout from "./MainLayout";
+import ForgotPassword from "./auth/ForgotPassword";
 import Login from "./auth/Login";
 import Signup from "./auth/Signup";
-import { Button } from "./components/ui/button";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import VerifyEmail from "./auth/VerifyEmail";
 
 const appRouter = createBrowserRouter([
     {
@@ -17,6 +18,14 @@ const appRouter = createBrowserRouter([
     {
         path: "/signup",
         element: <Signup />,
+    },
+    {
+        path: "/forgot-password",
+        element: <ForgotPassword />,
+    },
+    {
+        path: "/verify-email",
+        element: <VerifyEmail />,
     },
 ]);
 
