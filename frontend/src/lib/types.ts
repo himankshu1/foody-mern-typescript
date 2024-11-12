@@ -1,1 +1,4 @@
-export type FilterOptionsState = {};
+export type FilterOptionsState = {
+    id: string;
+    label: string;
+};
