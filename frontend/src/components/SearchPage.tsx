@@ -1,4 +1,4 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Filter from "./Filter";
 import { Input } from "./ui/input";
 import { ChangeEvent, useState } from "react";
@@ -35,7 +35,7 @@ export default function SearchPage() {
                         </Button>
                     </div>
 
-                    {/* filtered items */}
+                    {/* different restaurants items */}
                     <div>
                         <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-2 mt-3 mb-10">
                             <h1 className="font-medium text-lg">

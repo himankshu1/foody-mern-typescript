@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 
-const NoResultFound = ({ searchText }: { searchText: string }) => {
+export const NoResultFound = ({ searchText }: { searchText: string }) => {
     return (
         <div className="text-center">
             <h1 className="text-2xl font-semibold text-gray-700 dark:text-gray-200">
