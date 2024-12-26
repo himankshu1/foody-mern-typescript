@@ -8,8 +8,12 @@ import {
 } from "./ui/sheet";
 import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
+import { useAuth0 } from "@auth0/auth0-react";
+import UsernameMenu from "./UsernameMenu";
 
 export default function MobileNav() {
+    const { isAuthenticated, loginWithRedirect } = useAuth0();
+
     return (
         <Sheet>
             <SheetTrigger>
@@ -24,9 +28,19 @@ export default function MobileNav() {
                 <Separator />
 
                 <SheetDescription className="flex">
-                    <Button className="flex-1 font-bold bg-orange-500">
-                        Log in
-                    </Button>
+                    <span className="flex space-x-2 items-center">
+                        {isAuthenticated ? (
+                            <UsernameMenu />
+                        ) : (
+                            <Button
+                                variant="ghost"
+                                className="font-bold hover:text-orange-500 hover:bg-white"
+                                onClick={async () => await loginWithRedirect()}
+                            >
+                                Log in
+                            </Button>
+                        )}
+                    </span>
                 </SheetDescription>
             </SheetContent>
         </Sheet>
